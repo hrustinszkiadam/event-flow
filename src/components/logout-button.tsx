@@ -20,7 +20,8 @@ export default function LogoutButton({
 	const router = useRouter();
 	const { mutate: logout, isPending } = useMutation({
 		mutationFn: () => authClient.signOut(),
-		onSuccess: () => {
+		onSuccess: async () => {
+			await router.invalidate();
 			router.navigate({ to: '/auth/login' });
 		},
 	});

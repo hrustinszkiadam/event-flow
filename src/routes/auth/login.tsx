@@ -41,7 +41,8 @@ function LoginPage() {
 
 	const loginMutation = useMutation({
 		mutationFn: signIn,
-		onSuccess: () => {
+		onSuccess: async () => {
+			await router.invalidate();
 			router.navigate({ to: '/' });
 		},
 		onError: (error) => {

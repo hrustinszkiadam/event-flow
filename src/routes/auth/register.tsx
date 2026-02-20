@@ -55,7 +55,8 @@ function RegisterPage() {
 
 	const registerMutation = useMutation({
 		mutationFn: signUp,
-		onSuccess: () => {
+		onSuccess: async () => {
+			await router.invalidate();
 			router.navigate({ to: '/' });
 		},
 		onError: (error) => {
