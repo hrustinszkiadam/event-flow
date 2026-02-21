@@ -34,10 +34,12 @@ Event Flow is a web application for managing events and their associated menus. 
     npm run db:seed # When using bun, use db:seed-bun
    ```
 
-   > Note: If you wish to stop the database, you can run `npm run db:down`. Be cautious as this will remove all data in the database.
+   > Note: If you wish to stop the database, you can run `npm run db:down`.
 
 6. Start the development server:
 
    ```bash
     npm run dev
    ```
+
+> ⚠️ **Warning:** If authentication doesn't work after a fresh installation (e.g. registration or login fails silently), restart the development server and it should work fine. (Probably an issue because the framework is not fully released yet)
